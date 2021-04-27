@@ -1,5 +1,6 @@
 <template>
-	<button class="gulu-button" :class="classes">
+	<button class="gulu-button" :class="classes" :disabled="disabled">
+		<span v-if="loading" class="gulu-loadingIndicator"></span>
 		<slot />
 	</button>
 </template>
@@ -16,14 +17,28 @@
 			size: {
 				type: String,
 				default: 'normal'
+			},
+			level: {
+				type: String,
+				default: ''
+			},
+			disabled: {
+				type: Boolean,
+				default: false
+			},
+			loading: {
+				type: Boolean,
+				default: false
 			}
+
 		},
 		setup(props, context) {
-			const {theme, size} = props
+			const {theme, size, level} = props
 			const classes = computed(() => {
 				return {
 					[`gulu-theme-${theme}`]: theme,
 					[`gulu-size-${size}`]: size,
+					[`gulu-level-${level}`]: level,
 				}
 			})
 			return {
