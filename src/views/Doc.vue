@@ -1,0 +1,23 @@
+<template>
+	<div>
+		<Topnav />
+		<div class="container">
+			<aside>边栏</aside>
+			<main>主内容</main>
+		</div>
+	</div>
+</template>
+
+<script>
+	import Topnav from "../components/Topnav.vue"
+	export default {
+		name: "Doc",
+		components: {
+			Topnav
+		}
+	}
+</script>
+
+<style scoped>
+
+</style>
