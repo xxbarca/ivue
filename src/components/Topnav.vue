@@ -1,16 +1,40 @@
 <template>
-	<div class="topnav">
-		<div class="logo">logo</div>
+	<section class="top_nav">
+		<router-link to="/" class="logo">
+			<svg class="icon">
+				<use xlink:href="#icon-jiang"></use>
+			</svg>
+		</router-link>
 		<ul class="menu">
-			<li>菜单1</li>
-			<li>菜单2</li>
+			<li><router-link to="/doc">文档</router-link></li>
+			<li><a href="https://juejin.cn/user/3685218706799805" target="_blank" >掘金</a></li>
+			<li><a href="https://github.com/YjjTT" target="_blank" >GitHub</a></li>
 		</ul>
-	</div>
+		<div v-if="visibleMenuButton" class="toggleAside" @click="toggleAside">
+			<svg class="icon">
+				<use xlink:href="#icon-menu"></use>
+			</svg>
+		</div>
+	</section>
 </template>
 
 <script>
+	import {inject} from 'vue'
 	export default {
-		name: "Topnav"
+		name: "Topnav",
+		props: {
+			visibleMenuButton: {
+				type: Boolean,
+				default: false
+			}
+		},
+		setup() {
+			const asideVisible = inject('asideVisible');
+			const toggleAside = () => {
+				asideVisible.value = !asideVisible.value;
+			};
+			return {toggleAside};
+		}
 	}
 </script>
 
