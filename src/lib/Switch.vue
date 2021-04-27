@@ -5,7 +5,6 @@
 </template>
 
 <script>
-	import { ref } from 'vue'
 	export default {
 		name: "Switch",
 		props: {
@@ -31,7 +30,7 @@
 	}
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 	$h: 22px;
 	$h2: $h - 4px;
 	button {

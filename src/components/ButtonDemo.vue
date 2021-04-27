@@ -6,7 +6,12 @@
 		<Button theme="button">你好</Button>
 		<Button theme="link">你好</Button>
 		<Button theme="text">你好</Button>
-
+	</div>
+	<h1>示例2</h1>
+	<div>
+		<Button size="normal">你好</Button>
+		<Button size="big">你好</Button>
+		<Button size="small">你好</Button>
 	</div>
 </template>
 
