@@ -22,6 +22,9 @@ export const router = createRouter({
 		}, {
 			path: 'dialog',
 			component: () => import('./components/DialogDemo.vue')
+		}, {
+			path: 'tabs',
+			component: () => import('./components/TabsDemo.vue')
 		}]
 	}]
 })
