@@ -4,11 +4,11 @@
 		<div class="gulu-dialog-wrapper">
 			<div class="mb">
 				<header>
-					{{title}}
+					<slot name="title"></slot>
 					<span @click="close" class="gulu-dialog-close"></span>
 				</header>
 				<main>
-					<slot></slot>
+					<slot name="content"></slot>
 				</main>
 				<footer>
 					<Button level="main" @click="ok">确定</Button>
