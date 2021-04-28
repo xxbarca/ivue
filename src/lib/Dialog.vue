@@ -4,12 +4,11 @@
 		<div class="gulu-dialog-wrapper">
 			<div class="mb">
 				<header>
-					标题
+					{{title}}
 					<span @click="close" class="gulu-dialog-close"></span>
 				</header>
 				<main>
-					<p>第一行字</p>
-					<p>第二行字</p>
+					<slot></slot>
 				</main>
 				<footer>
 					<Button level="main" @click="ok">确定</Button>
@@ -41,6 +40,10 @@
 			cancel: {
 				type: Function,
 				default: () => {}
+			},
+			title: {
+				type: String,
+				default: "标题"
 			}
 		},
 		components: {

@@ -3,9 +3,12 @@
 	<h1>示例1</h1>
 	<Button @click="toggle">toggle</Button>
 	<Dialog v-model:visible="visible"
+			:title="这是标题"
 			:ok="ok"
 			:cancel="cancel"
-			:close-on-click-overlay="true"/>
+			:close-on-click-overlay="true">
+		<div>内容</div>
+	</Dialog>
 </template>
 
 <script>
