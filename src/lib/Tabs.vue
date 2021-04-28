@@ -2,18 +2,20 @@
 	<div class="gulu-tabs">
 		<div class="gulu-tabs-nav">
 			<span
+					@click="select(t)"
 					:class="{selected: t === selected}"
 					class="gulu-tabs-nav-item"
 					v-for="(t, index) in titles" :key="index">{{t}}</span>
 		</div>
 		<div class="gulu-tabs-content">
-			<component class="gulu-tabs-content-item" v-for="(c, index) in defaults" :is="c" :key="index" />
+			<component :key="current.props.title" class="gulu-tabs-content-item" :is="current"  />
 		</div>
 	</div>
 </template>
 
 <script>
 	import Tab from "./Tab.vue"
+	import {computed} from 'vue'
 	export default {
 		name: "Tabs",
 		props: {
@@ -29,13 +31,19 @@
 					throw new Error("Tabs 子标签必须为Tab")
 				}
 			})
+			const current = computed(() => {
+				return defaults.find(tag => tag.props.title === props.selected)
+			})
 			const titles = defaults.map(tag => tag.props.title)
+			const select = (title) => {
+				context.emit('update:selected', title)
+			}
 			return {
 				defaults,
-				titles
+				titles,
+				current,
+				select
 			}
-
-
 		}
 	}
 </script>
