@@ -1,0 +1,17 @@
+<template>
+	<Dialog />
+</template>
+
+<script>
+	import Dialog from "../lib/Dialog.vue"
+	export default {
+		name: "DialogDemo",
+		components: {
+			Dialog
+		}
+	}
+</script>
+
+<style scoped>
+
+</style>
