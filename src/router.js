@@ -18,7 +18,8 @@ export const router = createRouter({
 			{path: 'button', component: () => import('./components/ButtonDemo.vue')},
 			{path: 'selector', component: () => import('./components/SelectorDemo.vue')},
 			{path: 'dialog', component: () => import('./components/DialogDemo.vue')},
-			{path: 'tabs', component: () => import('./components/TabsDemo.vue')}
+			{path: 'tabs', component: () => import('./components/TabsDemo.vue')},
+			{path: 'input', component: () => import('./components/InputDemo.vue')},
 			]
 	}]
 })
