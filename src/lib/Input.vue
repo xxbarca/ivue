@@ -1,6 +1,7 @@
 <template>
 	<div class="wrapper">
 		<input
+				@input="onInput"
 				type="text"
 				:value="value"
 				:disabled="disabled"
@@ -26,10 +27,12 @@
 				default: false
 			}
 		},
-		setup() {
-
+		setup(props, context) {
+			const onInput = (e) => {
+				context.emit('update:value', e.target.value)
+			}
 			return {
-				onChange
+				onInput
 			}
 		}
 	}
